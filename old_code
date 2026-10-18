@@ -1,0 +1,17 @@
+key.forEach((key)=>{
+    key.addEventListener('click', () => {
+        const digit = key.textContent.trim()
+        current_value.textContent = current_value.textContent === "0" ? digit : current_value.textContent + digit;
+    });
+});
+
+equals_key.forEach((key)=>{
+    equals_key.addEventListener('click', () =>{
+        
+    });
+});
+
+if (current_value.textContent === "+"){
+
+}
+  

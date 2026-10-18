@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container" aria-label="Calculator">
+        <header class="calculator-header">
+            <h1>Calculator</h1>
+            <span class="mode-label">Standard</span>
+        </header>
+
+        <section class="display" aria-label="Calculator display">
+            <div class="previous-value" aria-hidden="true">&nbsp;</div>
+            <output class="current-value" aria-live="polite">0</output>
+        </section>
+
+        <section class="keypad" aria-label="Calculator keypad">
+            <button class = "key key-utility" type="button" aria-label="Clear">AC</button>
+            <button  class="key key-utility" type="button" aria-label="Toggle sign">+/-</button>
+            <button onclick = "appendToDisplay('%')" class="key key-utility" type="button" aria-label="Percent">%</button>
+            <button onclick = "appendToDisplay('÷')" class="key key-operator" type="button" aria-label="Divide">÷</button>
+            
+            <button onclick = "appendToDisplay('7')" class="key" type="button">7</button>
+            <button onclick = "appendToDisplay('8')" class="key" type="button">8</button>
+            <button onclick = "appendToDisplay('9')" class="key" type="button">9</button>
+            <button onclick = "appendToDisplay('x')" class="key key-operator" type="button" aria-label="Multiply">×</button>
+
+            <button onclick = "appendToDisplay('4')" class="key" type="button">4</button>
+            <button onclick = "appendToDisplay('5')" class="key" type="button">5</button>
+            <button onclick = "appendToDisplay('6')" class="key" type="button">6</button>
+            <button onclick = "appendToDisplay('-')" class="key key-operator" type="button" aria-label="Subtract">−</button>
+
+            <button onclick = "appendToDisplay('1')" class="key" type="button">1</button>
+            <button onclick = "appendToDisplay('2')" class="key" type="button">2</button>
+            <button onclick = "appendToDisplay('3')" class="key" type="button">3</button>
+            <button onclick = "appendToDisplay('+')" class="key key-operator" type="button" aria-label="Add">+</button>
+
+            <button onclick = "appendToDisplay('0')" class="key key-zero" type="button">0</button>
+            <button onclick = "appendToDisplay('.')" class="key" type="button" aria-label="Decimal">.</button>
+            <button class="key key-equals" type="button" aria-label="Equals">=</button>
+        </section>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>

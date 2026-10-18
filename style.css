@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        radial-gradient(ellipse at 18% 14%, rgba(88, 71, 180, 0.28), transparent 34%),
+        linear-gradient(135deg, #10131f, #1b2033 55%, #111521);
+    color: #f7f7fb;
+    font-family: Inter, "Segoe UI", sans-serif;
+}
+
+.container {
+    width: 400px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    background: rgba(29, 33, 50, 0.92);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+.calculator-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 26px;
+}
+
+h1 {
+    margin: 0px;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+
+.mode-label {
+    padding: 10px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 50px;
+    color: #a9aec3;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.display {
+    min-height: 148px;
+    padding: 20px 4px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.previous-value {
+    min-height: 24px;
+    color: #969db4;
+    font-size: 1rem;
+}
+
+.current-value {
+    max-width: 100%;
+    overflow: hidden;
+    color: #fff;
+    font-size: clamp(2.6rem, 12vw, 3.7rem);
+    font-weight: 300;
+    letter-spacing: -0.06em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.key {
+    min-height: 64px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 19px;
+    background: #292e42;
+    color: #f4f5fa;
+    font: inherit;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: background-color 150ms ease, transform 150ms ease;
+}
+
+.key:hover {
+    background: #363c54;
+}
+
+.key:active {
+    transform: scale(0.96);
+}
+
+.key:focus-visible {
+    outline: 2px solid #a897ff;
+    outline-offset: 3px;
+}
+
+.key-utility {
+    background: #34394e;
+    color: #c6c9d7;
+}
+
+.key-operator {
+    background: #393356;
+    color: #c4b7ff;
+    font-size: 1.4rem;
+}
+
+.key-equals {
+    border: 0;
+    background: linear-gradient(145deg, #9b82ff, #765ce5);
+    color: white;
+    box-shadow: 0 8px 20px rgba(123, 96, 230, 0.25);
+}
+
+.key-equals:hover {
+    background: linear-gradient(145deg, #aa95ff, #846cf0);
+}
+
+.key-zero {
+    grid-column: span 2;
+    text-align: left;
+    padding-left: 27px;
+}
+
+@media (max-width: 420px) {
+    body {
+        padding: 16px;
+    }
+
+    .container {
+        padding: 22px;
+    }
+
+    .keypad {
+        gap: 10px;
+    }
+
+    .key {
+        min-height: 58px;
+        border-radius: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
